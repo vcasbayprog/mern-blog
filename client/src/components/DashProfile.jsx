@@ -66,30 +66,30 @@ export default function DashProfile() {
                     ref={filePickerRef}
                     hidden
                 />
-                <div
-                    className="relative w-32 h-32 self-center cursor-pointer shadow-md overflow-hidden rounded-full"
-                    onClick={() => filePickerRef.current.click()}
-                    style={{
-                        backgroundImage: `url(${imageFileUrl || currentUser.profilePicture})`,
-                        backgroundSize: 'cover',
-                        backgroundPosition: 'center',
-                        border: '8px solid lightgray',
-                    }}
-                >
-                    {imageFileUploadProgress !== null && (
-                        <CircularProgressbar
-                            value={imageFileUploadProgress}
-                            text={`${imageFileUploadProgress}%`}
-                            strokeWidth={5}
-                            styles={buildStyles({
-                                pathColor: `rgba(62, 152, 199, ${imageFileUploadProgress / 100})`,
-                                textColor: '#3E98C7',
-                                trailColor: 'rgba(255, 255, 255, 0.5)',
-                                backgroundColor: 'transparent',
-                            })}
-                        />
-                    )}
-                </div>
+           <div
+    className="relative w-32 h-32 self-center cursor-pointer shadow-md overflow-hidden rounded-full"
+    onClick={() => filePickerRef.current.click()}
+    style={{
+        backgroundImage: `url(${imageFileUrl || currentUser.profilePicture})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        border: '8px solid lightgray',
+    }}
+>
+    {imageFileUploadProgress !== null && (
+        <CircularProgressbar
+            value={imageFileUploadProgress}
+            text={`${imageFileUploadProgress}%`}
+            strokeWidth={5}
+            styles={buildStyles({
+                pathColor: `rgba(62, 152, 199, ${imageFileUploadProgress / 100})`,
+                textColor: '#3E98C7',
+                trailColor: 'rgba(255, 255, 255, 0.5)',
+                backgroundColor: 'transparent',
+            })}
+        />
+    )}
+</div>
 
                 <TextInput
                     type="text"
